@@ -1,0 +1,9 @@
+[33mcommit 1b9d02b6df7f7a9c1c95ba4d0603b94bd89fac6c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmath-api[m[33m, [m[1;31morigin/math-api[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: vikramdev772 <vikramdev772@gmail.com>
+Date:   Sat Jul 25 14:02:56 2026 +0530
+
+    sum&fact assignment
+
+A	backend/src/main/java/jar/controller/Fact.java
+M	backend/src/main/java/jar/controller/Math.java
+A	backend/src/main/java/jar/controller/Sum.java

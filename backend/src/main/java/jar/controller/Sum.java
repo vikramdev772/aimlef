@@ -12,6 +12,20 @@ public class Sum {
     @PostMapping("/sum")
     public int calculateSum(@RequestBody SumRequest request) {
         return request.getA() + request.getB();
+
+
+import jar.dto.Sumdto;
+
+@RestController
+public class Sum {
+
+    @PostMapping("/sum/{a}")
+    public Sumdto sum(
+            @PathVariable int a) {
+
+        Sumdto obj = new Sumdto();
+        obj.setS(a);
+        return obj;
     }
 }
 

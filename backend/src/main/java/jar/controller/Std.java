@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jar.model.Student;
 import jar.repo.StudentRepo;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 @RestController
 @RequestMapping("/std")
@@ -45,9 +48,26 @@ public class Std {
         res.put("name",x);
         res.put("email",y);
         return res;
-
     }
 
+    @PutMapping("/{id}")
+    public Map<Object, Object> m3(@PathVariable Long id, @RequestBody Student s) {
+        //TODO: process PUT request
+        Map<Object, Object> res = new HashMap<>();
+
+        Student entity = db.findById(id).orElse(null);
+
+        entity.setName(s.getName());
+        entity.setEmail(s.getEmail());
+
+        db.save(entity);
+
+        res.put("status", 200);
+        res.put("message", "Student updated successfully");
+        res.put("student", entity);
+        
+        return res;
+    }
 
 
     List<Student> all(){

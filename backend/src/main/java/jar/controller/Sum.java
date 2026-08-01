@@ -10,8 +10,7 @@ import jar.dto.Sumdto;
 public class Sum {
 
     @PostMapping("/sum/{a}")
-    public Sumdto sum(
-            @PathVariable int a) {
+    public Sumdto sum( @PathVariable int a) {
 
         Sumdto obj = new Sumdto();
         obj.setS(a);

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -76,7 +77,14 @@ public class Std {
         res.put("msg","user updated sucefully");
         return res;
     }
-    
 
+    @DeleteMapping("/delete/{id}")
+        Map<Object, Object> deleteStudent(@PathVariable Long id) {
+        Map<Object, Object> res = new HashMap<>();
+        db.deleteById(id);
+        res.put("status", 200);
+        res.put("msg", "User deleted successfully");
+        return res;
+    }
 
 }

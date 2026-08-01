@@ -82,7 +82,7 @@ public class Std {
         Map<Object, Object> deleteStudent(@PathVariable Long id) {
         Map<Object, Object> res = new HashMap<>();
         db.deleteById(id);
-        res.put("status", 200);
+        res.put("status", 203);
         res.put("msg", "User deleted successfully");
         return res;
     }
